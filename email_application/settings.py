@@ -129,25 +129,3 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')"""
 
 
 
-from django.template.loader import render_to_string
-from django.core.mail import EmailMessage
-
-
-CRONJOBS = [
-    ('*/1 * * * *', 'myapp.cron.my_cron_job')
-]
-
-
-import schedule
-
-import time
-
-def job():
-    print("I'm working...")
-
-schedule.every(1).minutes.do(job)
-schedule.run_pending()
-"""schedule.every().hour.do(job)
-schedule.every().day.at("10:30").do(job)
-schedule.every().monday.do(job)
-schedule.every().wednesday.at("13:15").do(job)"""
